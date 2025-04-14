@@ -18,6 +18,11 @@ app.use(cors());
 const PORT = process.env.PORT || 5000;
 const MONGO_URI = process.env.MONGO_URI;
 
+
+app.get("/", (req, res) => {
+  res.send("Hello from Qwik Cars API");
+}
+);
 app.use("/api/auth", authRoutes);
 app.use("/api/cars", carRoutes);
 app.use("/api/orders", orderRoutes);
